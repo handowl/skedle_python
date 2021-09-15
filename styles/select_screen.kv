@@ -1,0 +1,18 @@
+MDScreen:
+	spacing: 10
+
+    MDToolbar:
+        id: toolbar
+        title: "skedle"
+        elevation: 10
+        pos_hint: {"top": 1}
+    
+    RecycleView:
+		y: root.height - self.height - toolbar.height - 20
+        size_hint_x: .9
+        pos_hint: {'center_x': .5}
+        
+        BoxLayout:
+			id: view
+			orientation: 'vertical'
+			padding: [0, 0, 0, 100]

@@ -1,0 +1,84 @@
+<Time@MDLabel>
+    halign: 'center'
+    bold: True
+    color: 'white'
+    font_size: 26
+    adaptive_height: True
+    radius: [25, 10, 0, 0]
+
+<InfoLabel@MDLabel>
+    halign: 'left'
+    font_size: 22
+    padding_x: 20
+    shorten: True
+    shorten_from: 'right'
+    
+<Subject@MDCard>
+    orientation: "vertical"
+	elevation: 20
+    size: 300, 200
+    size_hint: .9, None
+    
+    pos_hint: {"center_x": .5, "center_y": .5}
+    radius: [25, 10, 25, 10]
+    
+    Time:
+		text: root.time
+		md_bg_color: root.bg_color
+    
+    
+    InfoLabel:
+        text: root.title
+        font_size: 24
+        
+	InfoLabel:
+        text: root.teacher
+		size_hint: .9, .5
+    
+    MDBoxLayout:
+		size_hint: .9, .5
+		MDLabel:
+			text: root.group
+			halign: 'center'
+			font_size: 20    
+			shorten: True
+			
+		MDLabel:
+			text: root.place
+			halign: 'center'
+			font_size: 20 
+			shorten: True
+
+<Day@MagicBehavior+MDSwiperItem>
+    do_scroll_y: False
+    width_mult: 1
+
+    ScrollView:
+        MDBoxLayout:
+			id: subjects
+            orientation: 'vertical'
+            adaptive_height: True
+            padding: [0, 0, 0, 120]
+            spacing: 30
+            
+<DayTitle@MagicBehavior+MDLabel>
+	halign: 'center'
+	font_size: 20
+	adaptive_height: True
+
+<Week@MDSwiper>
+	items_spacing: 0
+	Day:
+		id: day_0
+	Day:
+		id: day_1
+	Day:
+		id: day_2
+	Day:
+		id: day_3
+	Day:
+		id: day_4
+	Day:
+		id: day_5
+	Day:
+		id: day_6
