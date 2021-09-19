@@ -1,13 +1,11 @@
 from kivy.lang.builder import Builder
 from kivy.properties import ColorProperty, StringProperty
 from kivymd.uix.card import MDCard
-from kivymd.uix.label import MDLabel
 from kivymd.uix.swiper import MDSwiper, MDSwiperItem
 from kivymd.uix.behaviors.magic_behavior import MagicBehavior
 
 from datetime import datetime, timedelta
 import requests
-import time
 
 Builder.load_file('styles/week.kv')
 
@@ -17,10 +15,6 @@ COLORS = {
 	"#d5f6ff":  (.99, .74, .73, 1), #prac
 	"#d7d7f4":  (.99, .54, .69, 1), #labor
 }
-
-
-class DayTitle(MagicBehavior, MDLabel):
-	pass
 
 
 class Subject(MDCard):

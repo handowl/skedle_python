@@ -2,13 +2,13 @@
     halign: 'center'
     bold: True
     color: 'white'
-    font_size: 26
+    font_size: 48
     adaptive_height: True
     radius: [25, 10, 0, 0]
 
 <InfoLabel@MDLabel>
     halign: 'left'
-    font_size: 22
+    font_size: 40
     padding_x: 20
     shorten: True
     shorten_from: 'right'
@@ -16,7 +16,7 @@
 <Subject@MDCard>
     orientation: "vertical"
 	elevation: 20
-    size: 300, 200
+    size: 250, 500
     size_hint: .9, None
     
     pos_hint: {"center_x": .5, "center_y": .5}
@@ -29,7 +29,7 @@
     
     InfoLabel:
         text: root.title
-        font_size: 24
+        font_size: 48
         
 	InfoLabel:
         text: root.teacher
@@ -40,13 +40,13 @@
 		MDLabel:
 			text: root.group
 			halign: 'center'
-			font_size: 20    
+			font_size: 40    
 			shorten: True
 			
 		MDLabel:
 			text: root.place
 			halign: 'center'
-			font_size: 20 
+			font_size: 40
 			shorten: True
 
 <Day@MagicBehavior+MDSwiperItem>
@@ -58,12 +58,12 @@
 			id: subjects
             orientation: 'vertical'
             adaptive_height: True
-            padding: [0, 0, 0, 120]
+            padding: [0, 10, 0, 180]
             spacing: 30
             
 <DayTitle@MagicBehavior+MDLabel>
 	halign: 'center'
-	font_size: 20
+	font_size: 48
 	adaptive_height: True
 
 <Week@MDSwiper>

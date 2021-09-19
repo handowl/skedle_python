@@ -1,11 +1,9 @@
 from kivy.storage.dictstore import DictStore
+from kivy.lang.builder import Builder
 from kivymd.app import MDApp
-from kivymd.uix.screen import MDScreen
-from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.list import MDList, TwoLineListItem
-from kivy.uix.recycleview import RecycleView
-from week import *
-from group_select import *
+from week import Week
+from group_select import GroupsList, GroupNumber
+from datetime import datetime
 
 DAYS = (
     'Понедельник',
@@ -26,8 +24,8 @@ class Main(MDApp):
             self._group = STORE.get('settings')['group']
             
             self._main_screen = Builder.load_file('styles/main_screen.kv')
-            height_num = self._main_screen.height - self._main_screen.ids.toolbar.height - 20
-            y_num = self._main_screen.height - self._main_screen.ids.toolbar.height - self._main_screen.ids.day_name.height - 40
+            height_num = self._main_screen.height - self._main_screen.ids.toolbar.height
+            y_num = self._main_screen.height - self._main_screen.ids.toolbar.height - self._main_screen.ids.day_name.height - 70
             week_swiper = Week(
                                 self._group,
                                 datetime.today(),

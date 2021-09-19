@@ -1,7 +1,6 @@
 from kivy.lang.builder import Builder
-from kivy.properties import StringProperty, ListProperty
 from kivymd.uix.textfield import MDTextField
-from kivymd.uix.list import MDList, TwoLineListItem
+from kivymd.uix.list import TwoLineListItem
 from kivy.uix.recycleview import RecycleView
 from kivy.event import EventDispatcher
 
@@ -25,9 +24,6 @@ class GroupNumber(MDTextField, EventDispatcher):
 	def on_enter_text(self):
 		pass
 		
-class Numbe(TwoLineListItem):
-	pass
-		
 class GroupsList(RecycleView, EventDispatcher):
 	def __init__(self):
 		super().__init__()
@@ -40,7 +36,7 @@ class GroupsList(RecycleView, EventDispatcher):
 			group_number = group['gruppa']
 			second_text = ', '.join((group['fakultet'], group['course']))
 			
-			list_item = Numbe(text=group_number, secondary_text=second_text)
+			list_item = TwoLineListItem(text=group_number, secondary_text=second_text)
 			list_item.bind(on_release=self.on_pressed)
 			self._groups_widgets.append(list_item)
 		self.update_list(self._groups_widgets)
