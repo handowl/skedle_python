@@ -28,7 +28,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 0.2
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -46,10 +46,10 @@ requirements = python3,kivy,requests,kivymd,datetime,pillow,urllib3,charset_norm
 #garden_requirements =
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/images/tspu_logo.jpeg
+presplash.filename = %(source.dir)s/images/tspu_logo.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/images/tspu_logo.jpeg
+icon.filename = %(source.dir)s/images/tspu_logo.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait

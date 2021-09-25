@@ -78,6 +78,10 @@ class Week(MDSwiper):
 			
 			subject['group'] += subject['subgroup']
 			
+			del subject['id'] #sometimes some people in TSPU 
+								#create one subject two times and subjects have different ids
+								#now we don't need this parameter
+			
 		return data
 		
 	def get_week_dates(self):
@@ -90,13 +94,13 @@ class Week(MDSwiper):
 	def get_current_week_subjects(self, week_days, timetable):
 		subjects = dict.fromkeys(week_days, [])
 		for date in subjects.keys():
-			subjects[date] = tuple(subject for subject in timetable if subject['start'] == date)
-			
+			current_day_subjects = list()
+			for subject in timetable:
+				if subject['start'] == date and subject not in current_day_subjects:
+					current_day_subjects.append(subject)
+			subjects[date] = current_day_subjects
 		return subjects
 		
-	def on_swipe(self):
-		index = self.get_current_index()
-		self.ids[f'day_{index}'].shake()
 		
 	def on_overswipe_right(self):
 		self.current_weekdate += timedelta(days=7)
